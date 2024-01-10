@@ -12,7 +12,7 @@ RUN apt-get -y update && \
     apt-get purge --auto-remove -y curl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists*
-
+COPY --from=mwader/static-ffmpeg:4.4.1 /ffmpeg /usr/local/bin/
 
 COPY /run_gotty.sh /run_gotty.sh
 
